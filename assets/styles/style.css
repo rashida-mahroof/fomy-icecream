@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-color:#6cc8c7;
+    --secondary-color:#f9b2ac;
+}
+
+
+/*--------------------------------------*/
+/* HEADER: Position relative to help... */
+/*    ... poitioning elements absolute  */
+/*--------------------------------------*/
+
+header {
+    background: var(--secondary-color);
+    padding: 1em 0;
+    position: relative;
+    height: 650px;
+}
+
+/*------------------------------------------*/
+/* Allows multiple floats in same element   */
+/*------------------------------------------*/
+
+header::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+/*--------------------------------------*/
+/*               LOGO                   */
+/*--------------------------------------*/
+
+.logo {                  /* Effects the whole logo, but #logo-last has changes */
+    position: absolute;                    /* Starting position of "JASON" for logo */
+    
+}
+
+
+/*--------------------------------------*/
+/*            Navigation                */
+/*--------------------------------------*/
+.site-nav {
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    background:var(--secondary-color);
+    height: 0px;
+    overflow: hidden;
+}
+
+.site-nav-open {
+    height: auto;
+}
+
+.site-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;  /* Removes li bullets */
+}
+
+.site-nav li {
+    border-bottom: 1px solid #d7d7d7;  /* border beneath nav li */
+}
+
+.site-nav li:last-child {     /* removes border from last nav li */
+    border: none;
+}
+
+.site-nav a {   
+    text-align: center;         /* Displays nav links as block for smaller screens */
+    color: #fff;
+    display: block;
+    padding: 1em 0;  /* padding for links */
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.site-nav a:hover,         /* hover is for computers and focus is for mobile */
+.site-nav a:focus {
+    background:var(--primary-color);
+    color: #4d4d4d;
+}
+
+/*--------------------------------------*/
+/*   ICON styling for smaller screens   */
+/*--------------------------------------*/ 
+
+
+
+/*--------------------------------------*/
+/* Acts as btn & contains hamburger     */
+/*--------------------------------------*/
+
+.menu-toggle {
+    padding: 1em;
+    position: absolute;
+    top: 1.7em;
+    right: 1em;
+    cursor: pointer;
+}
+
+
+/*--------------------------------------*/
+/*   Styles the hamburger for btn       */
+/*--------------------------------------*/
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    content:'';
+    display: block;
+    background: #00b3b3;
+    height: 3px;
+    width: 1.75em;
+    border-radius: 2px;
+    transition: all ease-in-out 500ms;
+}
+
+/*--------------------------------------*/
+/* Instance of hamburger (top line)     */
+/*--------------------------------------*/
+
+.hamburger::before {
+    transform: translateY(-7px);
+}
+
+/*--------------------------------------*/
+/* Instance of hamburger bottom line    */
+/*--------------------------------------*/
+
+.hamburger::after {
+    transform: translateY(4px);
+}
+
+/*--------------------------------------*/
+/* When Nav menu is open, hamburger = X */
+/*--------------------------------------*/
+
+.open .hamburger {
+    transform: rotate(45deg);
+    background:#fff;
+}
+
+/*--------------------------------------*/
+/* Before hamburger line is invisible   */
+/*--------------------------------------*/
+.open .hamburger::before {
+    opacity: 0;            
+}
+
+/*--------------------------------------*/
+/* Animates after line to create an X   */
+/*--------------------------------------*/
+.open .hamburger::after {
+    transform: translateY(-3px) rotate(-90deg);
+    background: #fff;
+}
+
+.site-nav-open {
+       
+    width: 100%;
+}
+
+
+/*--------------------------------------*/
+/*    For Device (Screens > 700px )     */
+/*--------------------------------------*/
+@media (min-width:700px) {
+
+    .menu-toggle {       /* Removes hamburger menu */
+        display: none;
+    }
+    
+    .site-nav {         /* Positions site nav & removes background color */
+        height: auto;
+        position: relative;
+        background: transparent;
+        float: right;
+        font-weight: 300;
+    }
+
+    .site-nav li {               /* inline-block and removes border from bottom */
+        display: inline-block;
+        border: none;
+    }
+
+    .site-nav a {       /* Adds spacing between Nav links */
+        padding: 0;
+        margin-left: 3em;
+    }
+
+    .site-nav a:hover,      /* Makes link background transparent on hover */
+    .site-nav a:focus {        /* Changes font color to light blue */
+        background: transparent;
+        
+        color: var(--primary-color);
+    }
+
+    .site-nav .site-nav-icon {     /* Removes Font Awesome Icons for larger screens */
+        display: none;
+    }
+
+}
