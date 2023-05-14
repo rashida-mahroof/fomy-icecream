@@ -18,7 +18,7 @@ header {
     background: var(--secondary-color);
     padding: 1em 0;
     position: relative;
-    height: 650px;
+    
 }
 
 /*------------------------------------------*/
@@ -36,7 +36,10 @@ header::after {
 /*--------------------------------------*/
 
 .logo {                  /* Effects the whole logo, but #logo-last has changes */
-    position: absolute;                    /* Starting position of "JASON" for logo */
+   display: flex;
+   align-items: center;
+   justify-content: center;   
+   padding: 8px 0;                 /* Starting position of "JASON" for logo */
     
 }
 
@@ -180,8 +183,9 @@ header::after {
         height: auto;
         position: relative;
         background: transparent;
-        float: right;
+    
         font-weight: 300;
+        text-align: center;
     }
 
     .site-nav li {               /* inline-block and removes border from bottom */
