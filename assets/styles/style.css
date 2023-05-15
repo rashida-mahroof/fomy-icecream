@@ -169,7 +169,13 @@ header::after {
     width: 100%;
 }
 
-
+.banner img{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 47% 100%);
+}
+.banner .cont{
+    clip-path: polygon(0 0, 68% 0, 100% 100%, 0 100%);
+    background-color: var(--secondary-color);
+}
 /*--------------------------------------*/
 /*    For Device (Screens > 700px )     */
 /*--------------------------------------*/
