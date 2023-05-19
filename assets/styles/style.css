@@ -1,7 +1,16 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Jost:wght@300;400;500;600;700&display=swap');
+  
+  
+  /*
+  font-family: 'Jost', sans-serif; */
+  
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Jost', sans-serif !important;
+     /* font-family: 'Dancing Script', cursive; */
 }
 :root{
     --primary-color:#6cc8c7;
@@ -13,10 +22,12 @@
 /* HEADER: Position relative to help... */
 /*    ... poitioning elements absolute  */
 /*--------------------------------------*/
-
+img{
+    width: 100%;
+}
 header {
     background: var(--secondary-color);
-    padding: 1em 0;
+    padding: .5em 0;
     position: relative;
     
 }
@@ -36,10 +47,11 @@ header::after {
 /*--------------------------------------*/
 
 .logo {                  /* Effects the whole logo, but #logo-last has changes */
-   display: flex;
+   /* display: flex;
    align-items: center;
    justify-content: center;   
-   padding: 8px 0;                 /* Starting position of "JASON" for logo */
+   padding: 8px 0;    */
+                 /* Starting position of "JASON" for logo */
     
 }
 
@@ -79,7 +91,7 @@ header::after {
     color: #fff;
     display: block;
     padding: 1em 0;  /* padding for links */
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     text-decoration: none;
 }
 
@@ -168,14 +180,20 @@ header::after {
        
     width: 100%;
 }
-
+.banner {
+    height: 100%;
+    background-image: url(assets/images/2.jpg);
+   
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 60px 0;
+}
 .banner img{
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 47% 100%);
+    width: 100%;
+    object-fit: cover;
 }
-.banner .cont{
-    clip-path: polygon(0 0, 68% 0, 100% 100%, 0 100%);
-    background-color: var(--secondary-color);
-}
+
 /*--------------------------------------*/
 /*    For Device (Screens > 700px )     */
 /*--------------------------------------*/
@@ -216,19 +234,27 @@ header::after {
     }
 
 }
-
+.sec-hed{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 2em 0;
+}
 .round-bx{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 250px;
     border-radius: 50rem;
     border: 5px solid var(--secondary-color);
+    overflow: hidden;
 }
 .round-bx img{
+    object-fit: cover;
     border-radius: 50rem;
     width: 100%;
+    height: 100%;
     transition: transform .7s ease-in-out;
 }
 .round-bx img:hover{
@@ -251,14 +277,17 @@ header::after {
     flex-direction: column;
 }
 .trending .trend-bx .img-bx{
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
     border: 1px solid #ccc;
     border-radius: 20px;
+    overflow: hidden;
 }
 .trending .trend-bx .img-bx img{
     width: 100%;
+    height: 100%;
     border-radius: 20px;
+    object-fit: cover;
 }
 .trending .trend-bx .p-name{
     font-weight: 600;
@@ -281,4 +310,23 @@ display: flex;
 .trending .trend-bx .icon-bx i:hover{
 transform: translate3d(10px, 0, 100px);
 cursor: pointer;
+}
+.logo{
+    display: none;
+}
+.site-nav ul li a img{
+    width: 80px !important;
+}
+@media screen and (max-width:768px) {
+    .logo{
+        display: block;
+    }
+    .container ul li:nth-child(4){
+        display: none;
+    }
+    header {
+        
+        padding: 0 0;
+        
+    }
 }
