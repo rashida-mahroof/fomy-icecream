@@ -601,6 +601,15 @@ cursor: pointer;
     background: #62C3E7;
   }
 @media screen and (max-width:768px) {
+     .about_section .detail-box a {
+        margin-bottom: 10px;
+     }
+    .aboutsec .detail-box{
+        text-align: center;
+    }
+    .welcome .col-md-4{
+        margin-bottom: 2rem;
+    }
     .banner h1, p{
         text-align: center;
     }
