@@ -1,7 +1,6 @@
 
-  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Jost:wght@300;400;500;600;700&display=swap');
-  
-  
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Mulish:wght@300;400;500;600;700;800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@300;400;500;600;700&display=swap'); */
   /*
   font-family: 'Jost', sans-serif; */
   
@@ -17,7 +16,8 @@
     --secondary-color:#f9b2ac;
 }
 body{
-  font-family: 'Jost', sans-serif !important;
+  font-family: 'Mulish', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
 }
 
 a{
@@ -31,13 +31,14 @@ a{
 img{
     width: 100%;
 }
+
 header {
     background: var(--secondary-color);
     padding: .5em 0;
     height: 4rem;
     /* position: relative; */
     /* position: static; */
-    position: fixed;width: 100%;z-index: 9999;top: 0;
+    position: fixed;width: 100%;z-index: 999;top: 0;
 }
 
 /*------------------------------------------*/
@@ -93,11 +94,11 @@ header::after {
 }
 
 .site-nav a {  
-  font-weight: 500; 
-  font-family: 'Dancing Script', cursive !important;
+  /* font-weight: 500;  */
+  /* font-family: 'Dancing Script', cursive !important; */
     text-align: center;         /* Displays nav links as block for smaller screens */
     color: #fff;
-    font-size: 19px;
+    font-size: 17px;
     display: block;
     padding: .6rem 0;  /* padding for links */
     /* text-transform: uppercase; */
@@ -105,7 +106,7 @@ header::after {
 }
 .site-nav a.active{
   color: var(--primary-color);
-  font-weight: 600;
+  font-weight: 500;
 }
 .site-nav a:hover,         /* hover is for computers and focus is for mobile */
 .site-nav a:focus {
@@ -195,6 +196,7 @@ section{
     margin: 8rem 0;
 }
 .banner{
+  
   margin-top: 4rem;
    position: relative;
     width: 100%;
@@ -293,7 +295,8 @@ section{
 
     .site-nav a {       /* Adds spacing between Nav links */
         padding: 0;
-        margin-left: 3em;
+        margin: 0 1rem;
+       
     }
 
     .site-nav a:hover,      /* Makes link background transparent on hover */
@@ -326,8 +329,9 @@ section.welcome .col-md-4{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 250px;
-    width: 250px;
+    flex-wrap: wrap;
+    height: 200px;
+    width: 200px;
     border-radius: 50rem;
     border: 5px solid var(--secondary-color);
     overflow: hidden;
@@ -349,7 +353,7 @@ section.welcome .col-md-4{
     font-size: 14px;
     margin: 15px 0 3px 0;
     text-align: center;
-    font-family: 'Dancing Script', cursive !important;
+    /* font-family: 'Dancing Script', cursive !important; */
     font-size: 18px;
 }
 .footer .col-sm-4 p a{
@@ -793,6 +797,10 @@ cursor: pointer;
 
 
 @media screen and (max-width:768px) {
+  #preloader{
+    
+    background-size: 80%;
+}
   .info_section {
     color: #000000;
    background-color: #fff;
@@ -901,3 +909,12 @@ cursor: pointer;
       background: linear-gradient(to bottom, #ffccb1 35%, transparent 35%);
     }
   }
+  #preloader{
+    background: #63d2e3 url(../images/preloader.gif) no-repeat center center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    text-align: center;
+    background-size: 40%;
+}
